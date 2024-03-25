@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Video HLS</title>
+    <style>
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+    <link rel="stylesheet" href="./WooliIcons/style.css">
+    <link rel="stylesheet" href="./wooli-player-hls.css">
+  </head>
+  <body>
+    <div class="content-video-hls">
+        <div id="wooli-hls-player">
+      <video
+        id="wooli-hls-video-player"
+        src="https://woolitv.s3.amazonaws.com/kda/master.m3u8"
+        type="application/x-mpegURL"
+      ></video>
+      <div class="controls-play-wooli">
+        <button class="wltv-backward-player">
+          <i class="wltv-reward-i"></i>
+        </button>
+        <button class="wltv-playpause"><i class="wltv-play-i"></i></button>
+        <button class="wltv-forward-player">
+          <i class="wltv-forward-i"></i>
+        </button>
+      </div>
+      <div class="wooli-hls-controls">
+        <div class="controls-player-progress">
+          <div class="progress-time" id="progress-time"></div>
+          <div class="progress-bar-container" id="progress-bar-container">
+            <div class="progress-bar"></div>
+            <div class="buffer-bar"></div>
+          </div>
+        </div>
+        <div class="wooli-control-list">
+          <div class="wooli-left-controls">
+            <button id="playPauseButton"><i class="wltv-play-i"></i></button>
+            <button id="captureFrameButton">
+              <i class="wltv-photo-i"></i>
+            </button>
+            <div class="volumen-wltv">
+              <span id="volume-wltv-d"><i class="wltv-volume-2"></i></span>
+              <div class="content-wltv-vol">
+                <span id="volume-percentage">100</span>
+                <input
+                  type="range"
+                  id="volume-control"
+                  min="0"
+                  max="100"
+                  value="100"
+                  step="1"
+                />
+              </div>
+            </div>
+            <div class="wltv-time-player">
+              <span id="current-time">00:00</span> /
+              <span id="total-time">00:00</span>
+            </div>
+          </div>
+          <div class="wooli-right-controls">
+            <button class="wooli-quality-ply">
+              <span class="wltv-qualityWd">Auto</span>
+              <div id="quality-selector"></div>
+            </button>
+            <span class="wooli-speed-ply">
+              <span class="wltv-speed-s7f">1.0X</span>
+              <div id="wooli-speed-player">
+                <button id="playback-rate-2.0">2.0x</button>
+                <button id="playback-rate-1.5">1.50x</button>
+                <button id="playback-rate-1.25">1.25x</button>
+                <button id="playback-rate-1.1">1.10x</button>
+                <button id="playback-rate-1.0" class="selected">1.0x</button>
+                <button id="playback-rate-0.75">0.75x</button>
+                <button id="playback-rate-0.5">0.25x</button>
+              </div>
+            </span>
+            <button class="wooli-subtitle-ply">
+              <i class="wltv-subtitle-i"></i>
+              <div id="subtitle-selector"></div>
+            </button>
+            <button class="wooli-audio-ply">
+              <i class="wltv-headphone1"></i>
+              <div id="audio-selector"></div>
+            </button>
+            <button id="pipButton"><i class="wltv-pip-out-i"></i></button>
+            <button class="wltv-screen-ex">
+              <i id="screen-web" class="wltv-fullscreen-i"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="content-video-hls">
+            <input type="text" id="stream-url-wltv" placeholder="https://example.com/test-hls/index.m3u8" required="">
+            <button id="enter-hls-link">Cambiar enlace</button>
+        </div>
+    </div>
+    <script src="./wooli-player-hls.js"></script>
+  </body>
+</html>
